@@ -1,0 +1,39 @@
+function nthPrime(n) {
+
+  var currentNumber = 0
+  var counter = 1
+  var innercounter = 1
+  var number = 3
+  while (counter < n) {
+
+    for (var i = 2, sqrt = Math.sqrt(number); i <= sqrt; i++) {
+
+      if ((number % i != 0) && (innercounter != 0)) {
+        innercounter++
+      }
+      if (number % 2 == 0 || number % i == 0) {
+        innercounter = 0
+        
+      }
+    }
+
+    if (innercounter > 0) {
+      currentNumber = number
+      counter++
+      
+    }
+
+    number++
+    innercounter = 1
+
+
+
+
+  }
+
+
+  console.log(currentNumber)
+
+  return currentNumber
+}
+nthPrime(100);

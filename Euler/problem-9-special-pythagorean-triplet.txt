@@ -1,0 +1,15 @@
+function specialPythagoreanTriplet(n) {
+  for (var a = 1; a <= n; a++) {
+    for (var b = a+1; b <= n; b++) {
+      let c = n - a - b
+      if(c**2 == (a**2) + (b**2))
+      {
+        return a*b*c
+      }
+    }
+  }
+
+  return true;
+}
+
+specialPythagoreanTriplet(1000);
