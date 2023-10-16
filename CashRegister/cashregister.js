@@ -1,5 +1,15 @@
 function checkCashRegister(price, cash, cid) {
-    var changeValue = { 'ONE HUNDRED': [100, cid[8][1]], 'TWENTY': [20, cid[7][1]], 'TEN': [10, cid[6][1]], 'FIVE': [5, cid[5][1]], 'ONE': [1, cid[4][1]], 'QUARTER': [.25, cid[3][1]], 'DIME': [.10, cid[2][1]], 'NICKEL': [.05, cid[1][1]], 'PENNY': [.01, cid[0][1]] };
+    const changeValue = {
+        'ONE HUNDRED': [100, cid[8][1]],
+        'TWENTY': [20, cid[7][1]],
+        'TEN': [10, cid[6][1]],
+        'FIVE': [5, cid[5][1]],
+        'ONE': [1, cid[4][1]],
+        'QUARTER': [.25, cid[3][1]],
+        'DIME': [.10, cid[2][1]],
+        'NICKEL': [.05, cid[1][1]],
+        'PENNY': [.01, cid[0][1]]
+    };
 
     var changes = parseFloat((cash - price).toFixed(2))
     var leftover = 0;
@@ -8,6 +18,9 @@ function checkCashRegister(price, cash, cid) {
     var counter = 0;
     const result = {};
     var currentChange = [];
+
+
+
     for (const key in changeValue) {
         total = parseFloat(total.toFixed(2)) + parseFloat(changeValue[key][1].toFixed(2))
     }
@@ -21,7 +34,7 @@ function checkCashRegister(price, cash, cid) {
                 return { 'status': 'INSUFFICIENT_FUNDS', change }
             }
             for (const key in changeValue) {
-                var check = (changes / changeValue[key][0]).toFixed(2);
+                let check = (changes / changeValue[key][0]).toFixed(2);
                 if (parseInt(check) > 0) {
                     if (counter == 9) {
                         var check_changes = total - changes
