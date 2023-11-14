@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "name": "GCC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/MinGW/include" // Add the path to your GCC includes
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:/MinGW/bin/gcc.exe", // Update with path to GCC compiler
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-x64" // Set IntelliSense mode to GCC
+        }
+    ],
+    "version": 4
+}

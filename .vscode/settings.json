@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "string": "cpp",
+        "vector": "cpp",
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "sdl.h": "c",
+        "sdl_log.h": "c",
+        "conio.h": "c"
+    }
+}
